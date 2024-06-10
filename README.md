@@ -2804,7 +2804,7 @@ M:AddSeperatorLeft("Info")
 	GemSent = M:AddLabelRight("")
 	function UpdateGem()
 		local Gem = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Toolbar.CurrencyList.Gems.TextLabel.Text
-		local Gold = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Toolbar.CurrencyList.Gold.TextLabel.Texe
+		local Gold = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Toolbar.CurrencyList.Gold.TextLabel.Text
 		GemSent:Set("Gems : "..Gem.."Gold : "..Gold)
 	end
 	
