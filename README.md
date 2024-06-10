@@ -2800,7 +2800,21 @@ M:AddSeperatorLeft("Info")
     Date = os.date("%d".." ".."%B".." ".."%Y")
     M:AddLabelLeft("Day : "..Date)
     M:AddLineLeft("")
-
+	M:AddSeperatorRight("Money")
+	GemSent = M:AddLabelRight("")
+	function UpdateGem()
+		local Gem = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Toolbar.CurrencyList.Gems.TextLabel.Text
+		local Gold = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Toolbar.CurrencyList.Gold.TextLabel.Texe
+		GemSent:Set("Gems : "..Gem.."Gold : "..Gold)
+	end
+	
+	spawn(function()
+		while true do wait(.1)
+			UpdateGem()
+		end
+	end)
+	M:AddLineRight("")
+	M:AddSeperatorRight("Setting")
 	M:AddToggleRight("Auto Skip Wave",Auto_Skip_Wave,function(a)
 		Auto_Skip_Wave = a
 	end)
